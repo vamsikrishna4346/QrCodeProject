@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        body {
+            font-family: "roboto";
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+        }
+        h1 {
+            color: white;
+        }
+        #qr-container {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            display: inline-block;
+            background-color: green;
+            border-radius: 10px;
+        }
+        #qr-code {
+            margin-top: 20px;
+        }
+        select, input[type="text"] {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="qr-container">
+        <h1>QR Code Generator</h1>
+        <input type="text" id="text-input" placeholder="Enter the text" /><br>
+        <label for="">selcet size</label>
+        <select id="size-selector">
+            <option value="100">Small (100x100)</option>
+            <option value="200">Medium (200x200)</option>
+            <option value="300" selected>Large (300x300)</option>
+        </select>
+        <br>
+        <div id="qr-code"></div><br>
+        <button id="generate-btn">Generate</button>
+        <button id="download-btn" >Download</button>
+        
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script>
+        const generateBtn = document.getElementById('generate-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const textInput = document.getElementById('text-input');
+        const sizeSelector = document.getElementById('size-selector');
+        const qrCodeContainer = document.getElementById('qr-code');
+
+    generateBtn.addEventListener('click', () => {
+    const text = textInput.value;
+    const size = parseInt(sizeSelector.value);
+
+    if (!text) {
+        alert('Please enter text to generate the QR code.');
+        return;
+    }
+
+    
+    qrCodeContainer.innerHTML = '';
+
+    // Use QRCode.toCanvas to generate the QR code
+    QRCode.toCanvas(null, text, { width: size }, (error, canvas) => {
+        if (error) {
+            console.error(error);
+            alert('Failed to generate QR code.');
+        } else {
+            // Append the generated canvas to the qr-code container
+            qrCodeContainer.appendChild(canvas);
+            //downloadBtn.disabled = false;
+        }
+    });
+});
+
+        downloadBtn.addEventListener('click', () => {
+            const canvas = qrCodeContainer.querySelector('canvas');
+            if (canvas) {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL();
+                link.download = 'qrcode.png';
+                link.click();
+            } else {
+                alert('Generate the QR code first!');
+            }
+        });
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+
+        const textInput = document.getElementById("text-input");
+        const sizeselector = document.getElementById("size-selector");
+        const qrbody = document.getElementById("qr-body");
+        const generatebtn = document.getElementById("generate-btn");
+        const downloadbtn = document.getElementById("download-btn");
+
+        let size = sizeselector.value;
+
+        generatebtn.addEventListener("click",(e)=>{
+            e.pri
+        })
+    </script>
+</body>
+</html>
